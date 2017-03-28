@@ -1,0 +1,15 @@
+.container
+  h1 Heroes form
+  form(#heroForm="ngForm")
+    .form-group
+      label Name
+      input.form-control(
+      type="text",
+      [(ngModel)]="model.name",
+      name="name"
+      )
+      .alert.alert-success {{model.name}}
+    button.btn.btn-success(
+    type="button",
+    (click)="test()"
+    ) success
