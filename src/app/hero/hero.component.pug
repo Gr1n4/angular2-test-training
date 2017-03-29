@@ -8,8 +8,8 @@
       [(ngModel)]="model.name",
       name="name"
       )
-      .alert.alert-success {{model.name}}
+      .alert.alert-success {{counter}}
     button.btn.btn-success(
     type="button",
-    (click)="test()"
+    (click)="increment()"
     ) success
