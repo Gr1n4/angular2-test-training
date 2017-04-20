@@ -1,11 +1,8 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
-import {NgRedux, NgReduxModule} from 'ng2-redux';
 
 import {AppRoutesModule} from './app-routes.module';
-
-import {IAppState, rootReducer} from './store';
 
 import {AppComponent} from './app.component';
 import {HeroComponent} from './hero/hero.component';
@@ -17,7 +14,6 @@ import {DashboardComponent} from './dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     AppRoutesModule,
-    NgReduxModule
   ],
   declarations: [
     AppComponent,
@@ -28,7 +24,6 @@ import {DashboardComponent} from './dashboard/dashboard.component';
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
-  constructor(ngRedux: NgRedux<IAppState>) {
-    ngRedux.configureStore(rootReducer, {counter: 0});
+  constructor() {
   }
 }
