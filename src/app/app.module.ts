@@ -6,7 +6,9 @@ import {AppRoutesModule} from './app-routes.module';
 
 import {AppComponent} from './app.component';
 import {HeroComponent} from './hero/hero.component';
-import {HeroDetailComponent} from './hero-detail/hero-detail.component';
+import {HeroDetailComponent} from './hero/hero-detail/hero-detail.component';
+import {HeroItemComponent} from './hero/hero-item/hero-item.component';
+import {HeroListComponent} from './hero/hero-list/hero-list.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 
 @NgModule({
@@ -19,6 +21,8 @@ import {DashboardComponent} from './dashboard/dashboard.component';
     AppComponent,
     HeroComponent,
     HeroDetailComponent,
+    HeroItemComponent,
+    HeroListComponent,
     DashboardComponent
   ],
   bootstrap: [ AppComponent ]

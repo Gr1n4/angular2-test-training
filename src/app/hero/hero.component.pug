@@ -5,11 +5,11 @@
       label Name
       input.form-control(
       type="text",
-      [(ngModel)]="model.name",
+      [(ngModel)]="model.title",
       name="name"
       )
-      .alert.alert-success {{counter$ | async}}
     button.btn.btn-success(
     type="button",
-    (click)="increment()"
-    ) success
+    (click)="addHero()"
+    ) Add Hero
+  hero-list([heroes]="heroes")
