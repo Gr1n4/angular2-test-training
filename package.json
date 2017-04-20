@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node_modules/.bin/karma start",
     "start": "webpack-dev-server --inline --progress --port 1337",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "build": "rimraf static && webpack --config config/webpack.prod.js --progress --profile --bail",
     "dev": "node_modules/.bin/lite-server -c config/server.json"
   },
   "keywords": [
@@ -27,8 +27,6 @@
     "@angular/platform-browser-dynamic": "~4.0.0",
     "@angular/router": "~4.0.0",
     "@ngrx/store": "github:ngrx/store",
-    "@types/node": "^7.0.12",
-    "awesome-typescript-loader": "^3.1.2",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
@@ -39,9 +37,9 @@
   },
   "devDependencies": {
     "@types/jasmine": "2.5.36",
-    "@types/node": "^7.0.5",
+    "@types/node": "^7.0.12",
     "angular2-template-loader": "^0.6.2",
-    "awesome-typescript-loader": "^3.0.7",
+    "awesome-typescript-loader": "^3.1.2",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.10.0",

@@ -8,7 +8,7 @@
       [(ngModel)]="model.name",
       name="name"
       )
-      .alert.alert-success {{counter}}
+      .alert.alert-success {{counter$ | async}}
     button.btn.btn-success(
     type="button",
     (click)="increment()"
