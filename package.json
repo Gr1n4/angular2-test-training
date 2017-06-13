@@ -6,9 +6,16 @@
   "scripts": {
     "test": "node_modules/.bin/karma start",
     "start": "webpack-dev-server --progress",
-    "build:aot": "node_modules/.bin/ngc -p tsconfig-aot.json",
+    "build:aot": "node_modules/.bin/ngc -p tsconfig-aot.json && npm run clear:js && npm run clear:map",
     "build": "rimraf static && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "server": "node_modules/.bin/lite-server -c config/server.json"
+    "server": "node_modules/.bin/lite-server -c config/server.json",
+    "clear": "npm run clear:aot && npm run clear:js && npm run clear:map && npm run clear:build",
+    "clear:all": "npm run clear:aot && npm run clear:build && npm run clear:npm",
+    "clear:aot": "node_modules/.bin/rimraf aot",
+    "clear:js": "node_modules/.bin/rimraf src/**/*.js",
+    "clear:map": "node_modules/.bin/rimraf src/**/*.js.map",
+    "clear:npm": "node_modules/.bin/rimraf node_modules",
+    "clear:build": "node_modules/.bin/rimraf static"
   },
   "keywords": [
     "angular 2",
@@ -56,6 +63,7 @@
     "lite-server": "^2.2.2",
     "lodash": "^4.16.4",
     "node-sass": "^4.5.0",
+    "progress-bar-webpack-plugin": "^1.9.3",
     "protractor": "~4.0.14",
     "pug": "^2.0.0-beta11",
     "pug-loader": "^2.3.0",

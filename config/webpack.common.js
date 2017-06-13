@@ -1,28 +1,17 @@
 const webpack = require('webpack')
     , HtmlWebpackPlugin = require('html-webpack-plugin')
     , ExtractTextPlugin = require('extract-text-webpack-plugin')
+    , ProgressBarPlugin = require('progress-bar-webpack-plugin')
     , path = require('path')
-    , AotPlugin = require('@ngtools/webpack').AotPlugin
     , helpers = require('./helpers')
 
 module.exports = {
-  entry: {
-    'polyfills': './src/polyfills.ts',
-    'vendor': './src/vendor.ts',
-    'app': './src/main.ts'
-  },
-
   resolve: {
     extensions: ['.ts', '.js']
   },
 
   module: {
     rules: [
-      {
-        test: /\.ts$/,
-        // loaders: ['awesome-typescript-loader', 'angular2-template-loader']
-        loaders: ['@ngtools/webpack']
-      },
       {
         test: /\.html$/,
         loader: 'html-loader'
@@ -59,14 +48,11 @@ module.exports = {
       name: ['app', 'vendor', 'polyfills']
     }),
 
-    new AotPlugin({
-      tsConfigPath: './tsconfig.json',
-      entryModule: helpers.root('src/app/app.module.ts#AppModule')
-    }),
-
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html'
-    })
+    }),
+
+    new ProgressBarPlugin()
   ]
 };
