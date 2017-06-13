@@ -3,7 +3,7 @@ import '../assets/css/styles.sass';
 
 @Component({
   selector: 'my-app',
-  template: require('./app.component.pug')(),
-  styles: [require('./app.component.sass')]
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.sass']
 })
 export class AppComponent { }

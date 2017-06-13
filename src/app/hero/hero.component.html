@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Heroes form</h1>
+  <form #heroForm="ngForm">
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="model.title"
+        name="name"
+      >
+    </div>
+    <button class="btn btn-success" (click)="addHero()">Add Hero</button>
+  </form>
+  <hero-list [heroes]="heroes"></hero-list>
+</div>

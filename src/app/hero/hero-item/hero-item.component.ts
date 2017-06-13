@@ -7,8 +7,8 @@ interface IHero {
 
 @Component({
   selector: 'hero-item',
-  template: require('./hero-item.component.pug')(),
-  styles: [require('./hero-item.component.sass')]
+  templateUrl: './hero-item.component.html',
+  styleUrls: ['./hero-item.component.sass']
 })
 export class HeroItemComponent {
   @Input() hero: IHero;

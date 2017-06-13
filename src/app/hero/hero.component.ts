@@ -4,15 +4,15 @@ import { Component } from '@angular/core';
 
 export class Hero {
   constructor(
-    private title: string = '',
-    private id: number = Date.now()
+    public title: string = '',
+    public id: number = Date.now()
   ) {}
 }
 
 @Component({
   selector: 'hero',
-  template: require('./hero.component.pug')(),
-  styles: [require('./hero.component.sass')]
+  templateUrl: './hero.component.html',
+  styleUrls: ['./hero.component.sass']
 })
 export class HeroComponent {
   model: Hero = new Hero();

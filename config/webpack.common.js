@@ -2,6 +2,7 @@ const webpack = require('webpack')
     , HtmlWebpackPlugin = require('html-webpack-plugin')
     , ExtractTextPlugin = require('extract-text-webpack-plugin')
     , path = require('path')
+    , AotPlugin = require('@ngtools/webpack').AotPlugin
     , helpers = require('./helpers')
 
 module.exports = {
@@ -19,15 +20,12 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
-        loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+        // loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+        loaders: ['@ngtools/webpack']
       },
       {
         test: /\.html$/,
         loader: 'html-loader'
-      },
-      {
-        test: /\.pug$/,
-        loader: ['pug-loader']
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
@@ -61,8 +59,13 @@ module.exports = {
       name: ['app', 'vendor', 'polyfills']
     }),
 
+    new AotPlugin({
+      tsConfigPath: './tsconfig.json',
+      entryModule: './src/app/app.module#AppModule'
+    }),
+
     new HtmlWebpackPlugin({
-      template: 'src/index.pug',
+      template: 'src/index.html',
       filename: 'index.html'
     })
   ]
