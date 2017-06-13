@@ -61,7 +61,7 @@ module.exports = {
 
     new AotPlugin({
       tsConfigPath: './tsconfig.json',
-      entryModule: './src/app/app.module#AppModule'
+      entryModule: helpers.root('src/app/app.module.ts#AppModule')
     }),
 
     new HtmlWebpackPlugin({

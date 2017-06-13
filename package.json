@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --progress",
     "build:aot": "node_modules/.bin/ngc -p tsconfig-aot.json",
     "build": "rimraf static && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "dev": "node_modules/.bin/lite-server -c config/server.json"
+    "server": "node_modules/.bin/lite-server -c config/server.json"
   },
   "keywords": [
     "angular 2",
